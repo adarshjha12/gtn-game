@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 500px;
+        height: 500px;
+        border: 2px solid;
+        border-radius: 10px;
+        background-color:#212121;
+        color: white;
+
+        & h2{
+            margin-bottom: 22px;
+        }
+
+        & nav{
+            margin-bottom: 20px;
+        }
+    }
+
+    .container > nav > a{
+
+        display: inline;
+        border: 2px solid;
+        border-radius: 4px;
+        padding: 0px 10px 5px;
+        background-color: grey;
+        color: white;
+         text-decoration: none;
+         font-weight: 800;
+        
+    }
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        text-align: center;
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+        background-color: #212121;
+    }
+
+    #weight-guide{
+        & h3 {
+            font-size: .8rem;
+            margin-bottom: 10px;
+            text-transform: capitalize;
+            font-size: 1.4rem;
+        }
+        
+        & p{
+            font-size: .8rem;
+            margin-bottom: 5px;
+            text-transform: capitalize;
+        }
+    }
+
+    form{
+        font-size: .8rem;
+
+        & .input-box > input{
+            margin-bottom: 22px;
+            background-color: gray;
+            border: none;
+            outline: none;
+            color: white;
+            width: auto;
+        }
+    
+
+        & .input-box{
+            position: relative;
+           
+            & label{
+                position: absolute;
+                left: 30%;
+                color: white;
+                pointer-events: none;
+                margin-right: 10px;
+                transition: all linear .2s;
+                
+            }
+        }
+    
+    
+    
+    & button{
+            margin-bottom: 20px;
+            background-color: yellow;
+            color: black;
+            font-weight: 800;
+        }
+}
+
+form > .input-box > input:valid ~ label, input:focus ~ label{
+
+    transform: translateX(-120px);
+    color: white;
+    font-size: .9rem;
+}
+
+</style>
+<body>
+
+    <div class="container">
+
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+
+        <h2>BMI calculator</h2>
+        
+        <form>
+
+          <div class="input-box"> 
+            <input type="text" name="" id="height" required >
+            <label for="height">height in cm:</label>
+           <br>
+           <input type="text" name="" id="weight" required>
+            <label for="weight">weight in kg:</label>
+        </div> 
+            <button>calculate</button>
+            <button type="reset">clean</button>
+        </form>
+
+            <div id="result" style="color: white;"></div>
+            <div id="weight-guide">
+                <h3>BMI weight guide</h3>
+                <p>under weight = less than 18.6</p>
+                <p>normal weight = between 18.6 and 24.9</p>
+                <p>over weight = more than 24.9</p>
+            </div>
+        
+
+    </div>
+</body>
+
+<script src="bmi.js"></script>
+</html>
